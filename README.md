@@ -18,7 +18,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Initialize
+    tn = TicketsNow::API.new
+
+To list all available api methods
+
+    tn.operations
+
+To list all the arguments needed for a specific action
+
+    tn.search_events_body
+     => {:SecurityToken=>"string", :EventName=>"string", :EventCategoryID=>"string", :EventTypeID=>"string", :VenueID=>"string", :MarketAreaID=>"string", :PostalCode=>"string", :StartDate=>"string", :NumberOfDays=>"string"}
+
+To pull data
+    args = {:SecurityToken=>"string", :EventName=>"string", :EventCategoryID=>"string", :EventTypeID=>"string", :VenueID=>"string", :MarketAreaID=>"string", :PostalCode=>"string", :StartDate=>"string", :NumberOfDays=>"string"}
+    tn.search_events(args)
+
 
 ## Contributing
 

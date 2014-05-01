@@ -7,6 +7,10 @@ require 'rails'
     default = {:SecurityToken=>ENV['tickets_now_token']}
     client = Savon.new(wsdl)
     operations = client.operations("GetEIInfo", "GetEIInfoSoap")
+
+    define_method("operations") do
+      client.operations("GetEIInfo", "GetEIInfoSoap").map! {|x| x.underscore}
+    end
     operations.each do |action|
       define_method("#{action.underscore}") do |argument = {}|
         o = client.operation("GetEIInfo", "GetEIInfoSoap", action)
