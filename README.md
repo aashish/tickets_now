@@ -31,6 +31,7 @@ To list all the arguments needed for a specific action
      => {:SecurityToken=>"string", :EventName=>"string", :EventCategoryID=>"string", :EventTypeID=>"string", :VenueID=>"string", :MarketAreaID=>"string", :PostalCode=>"string", :StartDate=>"string", :NumberOfDays=>"string"}
 
 To pull data
+
     args = {:SecurityToken=>"string", :EventName=>"string", :EventCategoryID=>"string", :EventTypeID=>"string", :VenueID=>"string", :MarketAreaID=>"string", :PostalCode=>"string", :StartDate=>"string", :NumberOfDays=>"string"}
     tn.search_events(args)
 
